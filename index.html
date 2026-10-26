@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Home</title>
+ <link rel="stylesheet" href="./Assets/styles_main.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body class="home-page">
+  <header class="site-header">
+    <a class="site-logo" href="./index.html" aria-label="Home">
+      <img src="./Assets/s919d_logo.png" alt="Home">
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="./about.html">About</a>
+      <a href="./gallery.html">Gallery</a>
+      <a href="./services.html">Services</a>
+      <a href="./contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <video class="home-video" autoplay muted loop playsinline aria-hidden="true">
+      <source src="./Assets/vecteezy_smooth-teal-abstract-background-with-flowing-curves-and-soft_75763249.mp4" type="video/mp4">
+    </video>
+    <div>
+      <h1>Your ideas, brought to life.</h1>
+      <h2 class="dreams-delivered">Dreams, delivered.</h2>
+      <p>Transforming clever concepts into visual reality. This is our selection of the best compositions combining typography, graphic elements, branding, web design, packaging, illustrations and page layout.</p>
+    </div>
+  </main>
+</body>
+</html>
+.home-page,
+.about-page,
+.gallery-page,
+.services-page,
+.contact-page {
+  margin: 0;
+  font-family: 'Urbanist', sans-serif;
+  background-color: #064257;
+}
+
+.site-header {
+  display: flex;
+  width: 100%;
+  min-height: 76px;
+  padding: 0 20px;
+  align-items: center;
+  justify-content: space-between;
+  text-align: right;
+  border-bottom: 1px solid white;
+  box-sizing: border-box;
+}
+
+.site-logo {
+  display: block;
+  flex: 0 0 auto;
+}
+
+.site-logo img {
+  display: block;
+  width: 280px;
+  height: auto;
+}
+
+.site-nav {
+  display: flex;
+  margin-left: 20px;
+  justify-content: flex-end;
+  gap: 20px;
+  font-family: 'Urbanist', sans-serif;
+  line-height: 1;
+}
+
+.site-nav a {
+  color: white;
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .site-nav {
+    flex-wrap: wrap;
+  }
+}
+
+.home-page {
+  color: white;
+}
+
+.home-page main {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: calc(100vh - 76px);
+  padding: 0 100px 120px;
+  box-sizing: border-box;
+}
+
+.home-page .home-video {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-page main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(6, 66, 87, 0.45);
+}
+
+.home-page main > div {
+  position: relative;
+}
+
+.home-page main h1,
+.home-page main h2 {
+  margin: 0;
+  font-weight: bold;
+  text-align: left;
+}
+
+.home-page main h1 {
+  font-size: 70px;
+}
+
+.home-page main h2 {
+  font-size: 60px;
+}
+
+.home-page .dreams-delivered {
+  opacity: 0.7;
+}
+
+.home-page main p {
+  max-width: 1500px;
+  margin: 12px 0 0;
+  font-size: 24px;
+  line-height: 1.8;
+  text-transform: none;
+}
+
+.about-page,
+.gallery-page {
+  color: white;
+  line-height: 2;
+}
+
+.about-page .one-column-layout {
+  width: min(1100px, 90%);
+  margin: 60px auto;
+}
+
+.about-page .home-column,
+.gallery-page .home-column {
+  min-width: 0;
+  padding: 30px 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-page .about-content {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 40px;
+  margin-top: 24px;
+}
+
+.about-page h1,
+.about-page h2,
+.about-page h3,
+.gallery-page h1,
+.gallery-page h2,
+.gallery-page h3 {
+  display: block;
+}
+
+.about-page h1,
+.gallery-page h1 {
+  max-width: none;
+  margin: 0;
+  font-size: clamp(2.5rem, 6vw, 70px);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.about-page .designer-word,
+.gallery-page .gallery-word {
+  opacity: 0.7;
+}
+
+.about-page h2,
+.gallery-page h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.about-page .about-copy,
+.gallery-page .gallery-copy {
+  margin: 0 0 24px;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.about-page .about-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.gallery-page .gallery-layout {
+  width: min(1100px, 90%);
+  margin: 60px auto;
+}
+
+.gallery-page .gallery-image {
+  display: block;
+  width: min(100%, 900px);
+  height: auto;
+  margin: 24px auto 0;
+}
+
+.services-page,
+.contact-page {
+  min-height: 100vh;
+}
+
+@media (max-width: 640px) {
+  .about-page .one-column-layout,
+  .gallery-page .gallery-layout {
+    margin: 30px auto;
+  }
+
+  .about-page .home-column,
+  .gallery-page .home-column {
+    padding: 20px 0;
+  }
+
+  .about-page .about-content {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-page main {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+}
